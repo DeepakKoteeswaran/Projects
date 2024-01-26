@@ -1,10 +1,10 @@
--- Calculate the total amount spent by each customer on Zomato
+-- Calculate the total amount spent by each customer on Uber
 SELECT s.userid, SUM(p.price) AS total_amount
 FROM sales s
 JOIN product p ON s.product_id = p.product_id
 GROUP BY s.userid;
 
--- Total number of days each customer visited Zomato
+-- Total number of days each customer visited Uber
 SELECT s.userid, COUNT(DISTINCT s.created_date) AS distinct_days
 FROM sales s
 GROUP BY s.userid;
